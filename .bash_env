@@ -1,0 +1,5 @@
+# setting of enviroment variable
+
+echo $BASH_SOURCE
+export BASHRC=~/.bashrc
+
