@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+ROOT = '/'
+GIT_DIR = '.git'
+HG_DIR = '.hg'
+
+cur = Dir.pwd
+branch = nil
+
+begin
+  if File.directory?("#{cur}/.git")
+    if `git branch` =~ /\* (%S*)/
+      branch = "(git: #{$1})"
+    else
+      branch = '(git)'
+    end
+    break
+  elsif File.directory?("#{cur}/.hg")
+    branch = `hg branch`
+    branch = branch != '' ? "(hg: #{branch})" : '(hg)'
+    break
+  end
+  
+  # goto parent dirctory
+  cur = File.basename(cur)
+end while cur != ROOT
+
+puts branch
