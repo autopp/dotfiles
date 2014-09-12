@@ -21,7 +21,7 @@ begin
   end
   
   # goto parent dirctory
-  cur = File.basename(cur)
+  cur = File.dirname(cur)
 end while cur != ROOT
 
 puts branch
