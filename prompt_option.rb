@@ -8,14 +8,14 @@ branch = nil
 
 begin
   if File.directory?("#{cur}/.git")
-    if `git branch` =~ /\* (%S*)/
+    if `git branch` =~ /\* (\S*)/
       branch = "(git: #{$1})"
     else
       branch = '(git)'
     end
     break
   elsif File.directory?("#{cur}/.hg")
-    `hg branch` =~ /(%S*)/
+    `hg branch` =~ /(\S*)/
     branch = $1 ? "(hg: #{$1})" : '(hg)'
     break
   end
