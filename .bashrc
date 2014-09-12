@@ -15,16 +15,19 @@
 # fi
 # 
 
+# path of dotfiles directory
+export DOTFILES=$(cd $(dirname $BASH_SOURCE); pwd)
+
 # setting environment variables
-if [[ -f .bash_env ]]; then
-  . .bash_env
+if [[ -f ${DOTFILES}/.bash_env ]]; then
+  . ${DOTFILES}/.bash_env
 else
   echo "dotfiles/.bash_env is not found" 1>&2
 fi
 
 # setting aliases
-if [[ -f .bash_aliases ]]; then
-  . .bash_aliases
+if [[ -f ${DOTFILES}/.bash_aliases ]]; then
+  . ${DOTFILES}/.bash_aliases
 else
   echo "dotfiles/.bash_aliases is not found" 1>&2
 fi
