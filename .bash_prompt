@@ -7,7 +7,7 @@ which ruby > /dev/null
 
 if [[ $? -eq 0 ]]; then
   if [[ -f ${DOTFILES}/prompt_option.rb ]]; then
-    export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\e[1;31m\][\u:\w] \$(ruby ${DOTFILES}/prompt_option.rb)\n\$\[\e[00m\] "
+    export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\e[1;31m\][\u:\w] \[\e[1;34m\]\$(ruby ${DOTFILES}/prompt_option.rb)\n\[\e[1;31m\]\$\[\e[00m\] "
   else
     echo "prompt_option.rb is not found"
   fi
