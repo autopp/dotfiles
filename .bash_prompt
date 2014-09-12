@@ -1,10 +1,16 @@
 # setting pronpt
 # check ruby is installed and prompt_option.rb is existed
-which ruby > /dev/null && test -f prompt_option.rb
 
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\e[1;31m\][\u:\w] \n\$\[\e[00m\] "
+
+which ruby > /dev/null
+
 if [[ $? -eq 0 ]]; then
-  PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\e[1;31m\][\u:\w] \$(./prompt_option.rb)\n\$\[\e[00m\] "
+  if [[ -f prompt_option.rb ]]; then
+    export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\e[1;31m\][\u:\w] \$(./prompt_option.rb)\n\$\[\e[00m\] "
+  else
+    echo "prompt_option.rb is not found"
+  fi
 else 
-  echo "ruby is not installed or prompt_option.rb is not fonud" 1>&2
+  echo "ruby is not installed" 1>&2
 fi
