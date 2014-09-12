@@ -15,8 +15,8 @@ begin
     end
     break
   elsif File.directory?("#{cur}/.hg")
-    branch = `hg branch`
-    branch = branch != '' ? "(hg: #{branch})" : '(hg)'
+    `hg branch` =~ /(%S*)/
+    branch = $1 ? "(hg: #{$1})" : '(hg)'
     break
   end
   
