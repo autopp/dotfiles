@@ -31,3 +31,9 @@ if [[ -f ${DOTFILES}/.bash_aliases ]]; then
 else
   echo "dotfiles/.bash_aliases is not found" 1>&2
 fi
+
+# setting rbenv
+if [[ -d "${HOME}/.rbenv" ]]; then
+  export PATH="${HOME}/.rbenv/bin:${PATH}"
+  eval "$(rbenv init -)"
+fi
