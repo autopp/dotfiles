@@ -17,7 +17,7 @@
 
 # setting environment variables
 if [[ -f .bash_env ]]; then
-  . bash_env
+  . .bash_env
 else
   echo "dotfiles/.bash_env is not found" 1>&2
 fi
