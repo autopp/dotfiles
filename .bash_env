@@ -8,3 +8,4 @@ export C_INCLUDE_PATH=$C_INCLUDE_PATH:~/.rbenv/versions/2.1.2/include/ruby-2.1.0
 
 export DROPBOX=~/Dropbox
 export LUCA=${DROPBOX}/master/luca
+export PATH=$LUCA/bin:$PATH
