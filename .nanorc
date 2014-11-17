@@ -1,0 +1,10 @@
+set autoindent
+set tabsize 2
+set tabstospaces
+set nowrap
+set smooth
+set undo
+set softwrap
+set cut
+
+
