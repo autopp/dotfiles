@@ -2,6 +2,7 @@ set title
 syntax on
 set tabstop=2
 set smartindent
+set shiftwidth=2
 set autoindent
 set expandtab
 set number
