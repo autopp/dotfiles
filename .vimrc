@@ -9,6 +9,4 @@ set number
 set showmatch
 set smarttab
 set ruler
-set cursorline
 set whichwrap=b,s,<,>,[,]
-
