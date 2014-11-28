@@ -10,3 +10,5 @@ set showmatch
 set smarttab
 set ruler
 set whichwrap=b,s,<,>,[,]
+set cursorline
+set t_ut=
