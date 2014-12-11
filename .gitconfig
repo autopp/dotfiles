@@ -1,0 +1,12 @@
+[user]
+  email = autopp.inc@gmail.com
+  name = autopp
+  
+[core]
+  editor = vim
+
+[alias]
+  stat = status
+  st = status
+  co = checkout
+  
