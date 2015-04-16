@@ -3,6 +3,7 @@ syntax on
 set tabstop=2
 set smartindent
 set shiftwidth=2
+set softtabstop=2
 set autoindent
 set smartindent
 set expandtab
@@ -16,10 +17,18 @@ inoremap <s-tab> <Esc><<i
 nnoremap <s-tab> <<
 
 set t_ut=
+inoremap {<Enter> {<CR>}<Esc><S-o>
 inoremap { {}<LEFT>
+inoremap {} {}<LEFT>
+inoremap [<Enter> [<CR>]<Esc><S-o>
 inoremap [ []<LEFT>
+inoremap [] []<LEFT>
+inoremap (<Enter> (<CR>)<Esc><S-o>
 inoremap ( ()<LEFT>
+inoremap () ()<LEFT>
 inoremap " ""<LEFT>
+inoremap "" ""<LEFT>
+inoremap '' ''<LEFT>
 inoremap ' ''<LEFT>
 function! DeleteParenthesesAdjoin()
   let pos = col(".") - 1  " カーソルの位置．1からカウント
