@@ -4,9 +4,9 @@ alias cd='pushd > /dev/null'
 alias chd='pushd ~ > /dev/null'
 alias pop=popd
 alias bd=popd
-alias ls='ls -oal --color -F'
-alias lal='ls -oal --color -F'
-alias lla='ls -ola --color -F'
+alias ls='ls -oal -G -F'
+alias lal='ls -oal -G -F'
+alias lla='ls -ola -G -F'
 
 alias reflesh=". ${BASHRC}"
 
