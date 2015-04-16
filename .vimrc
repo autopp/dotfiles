@@ -4,6 +4,7 @@ set tabstop=2
 set smartindent
 set shiftwidth=2
 set autoindent
+set smartindent
 set expandtab
 set number
 set showmatch
@@ -46,4 +47,24 @@ function! DeleteParenthesesAdjoin()
 endfunction
 " BackSpaceに割り当て
 inoremap <silent> <BS> <C-R>=DeleteParenthesesAdjoin()<CR>
+
+" プラグイン管理
+if has('vim_starting')
+  set nocompatible
+  " neobundle をインストールしてない場合はインストール
+  if !isdirectory(expand("~/.vim/bundle/neobundle.vim"))
+    echo "install neobundle"
+    :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
+  endif
+  " runtimepath へ追加
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle')) " プラグイン記述ここから
+let g:neobundle_default_git_protocol='https'
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundleCheck " インストールされていないものを自動でインストール
+call neobundle#end()
+syntax on
 
