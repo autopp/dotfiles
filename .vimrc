@@ -1,5 +1,4 @@
 set title
-syntax on
 set tabstop=2
 set smartindent
 set shiftwidth=2
@@ -11,8 +10,9 @@ set number
 set showmatch
 set smarttab
 set ruler
-set whichwrap=b,s,<,>,[,]
-syntax on
+set whichwrap=b,s,h,l,<,>,[,]
+set backspace=indent,eol,start
+set laststatus=2
 
 inoremap <s-tab> <Esc><<i
 nnoremap <s-tab> <<
@@ -236,7 +236,12 @@ NeoBundle 'scrooloose/syntastic'
 " syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
 " active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'] }
+" ruby には rubocop を使う
 let g:syntastic_ruby_checkers = ['rubocop']
+" QuickFixを自動で出す
+let g:syntastic_auto_loc_list = 1
+" :wq で閉じるときに linter を走らせない
+let g:syntastic_check_on_wq = 0
 
 " メソッド定義元へのジャンプ
 NeoBundle 'szw/vim-tags'
@@ -278,3 +283,5 @@ au FileType unite imap <silent> <buffer> <ESC><ESC> <ESC>q
 
 call neobundle#end() " プラグイン記述ここまで
 NeoBundleCheck " インストールされていないものを自動でインストール
+
+syntax on

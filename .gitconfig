@@ -1,6 +1,6 @@
 [user]
-  email = autopp.inc@gmail.com
-  name = autopp
+	email = autopp.inc@gmail.com
+	name = autopp
   
 [core]
   editor = vim
