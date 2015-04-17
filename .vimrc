@@ -84,10 +84,9 @@ let g:lightline = {
         \ 'active': {
         \   'left': [
         \     ['mode', 'paste'],
-        \     ['fugitive', 'gitgutter', 'filename'],
+        \     ['fugitive', 'gitgutter', 'filename', 'lineinfo', 'syntastic'],
         \   ],
         \   'right': [
-        \     ['lineinfo', 'syntastic'],
         \     ['percent'],
         \     ['charcode', 'fileformat', 'fileencoding', 'filetype'],
         \   ]
@@ -228,8 +227,12 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 
+" rsense
 NeoBundle 'marcus/rsense'
 NeoBundle 'supermomonga/neocomplete-rsense.vim'
+
+" rsenseの自動補完をon
+let g:rsenseUseOmniFunc = 1
 
 " linter
 NeoBundle 'scrooloose/syntastic'
