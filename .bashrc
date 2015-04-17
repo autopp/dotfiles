@@ -36,6 +36,4 @@ fi
 if [[ -d "${HOME}/.rbenv" ]]; then
   export PATH="${HOME}/.rbenv/bin:${PATH}"
   eval "$(rbenv init -)"
-else
-  echo "rbenv is not installed"
 fi
