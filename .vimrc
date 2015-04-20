@@ -245,7 +245,7 @@ let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'] }
 " ruby には rubocop を使う
 let g:syntastic_ruby_checkers = ['rubocop']
 " QuickFixを自動で出す
-let g:syntastic_auto_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 " :wq で閉じるときに linter を走らせない
 let g:syntastic_check_on_wq = 0
 
