@@ -235,6 +235,7 @@ NeoBundle 'supermomonga/neocomplete-rsense.vim'
 let g:rsenseUseOmniFunc = 1
 
 " rsenseの位置は環境変数で指定する
+let g:rsenseHome = "$RSENSE_HOME"
 
 " linter
 NeoBundle 'scrooloose/syntastic'
