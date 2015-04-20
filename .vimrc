@@ -20,13 +20,13 @@ nnoremap <s-tab> <<
 set t_ut=
 inoremap {<Enter> {<CR>}<Esc><S-o>
 inoremap { {}<LEFT>
-inoremap {} {}<LEFT>
+inoremap {} {}
 inoremap [<Enter> [<CR>]<Esc><S-o>
 inoremap [ []<LEFT>
-inoremap [] []<LEFT>
+inoremap [] []
 inoremap (<Enter> (<CR>)<Esc><S-o>
 inoremap ( ()<LEFT>
-inoremap () ()<LEFT>
+inoremap () ()
 inoremap " ""<LEFT>
 inoremap "" ""<LEFT>
 inoremap '' ''<LEFT>
@@ -234,6 +234,8 @@ NeoBundle 'supermomonga/neocomplete-rsense.vim'
 " rsenseの自動補完をon
 let g:rsenseUseOmniFunc = 1
 
+" rsenseの位置は環境変数で指定する
+
 " linter
 NeoBundle 'scrooloose/syntastic'
 " syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
@@ -288,3 +290,7 @@ call neobundle#end() " プラグイン記述ここまで
 NeoBundleCheck " インストールされていないものを自動でインストール
 
 syntax on
+filetype on
+filetype indent on
+filetype plugin on
+
