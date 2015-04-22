@@ -226,14 +226,16 @@ let g:gitgutter_sign_modified = '➜'
 let g:gitgutter_sign_removed = '✘'
 
 " コード補完
-NeoBundle 'Shougo/neocomplete.vim'
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
+if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
+  NeoBundle 'Shougo/neocomplete.vim'
+  let g:acp_enableAtStartup = 0
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_smart_case = 1
+  if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+  endif
+  let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 endif
-let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 
 " rsense
 NeoBundle 'marcus/rsense'
@@ -242,8 +244,6 @@ NeoBundle 'supermomonga/neocomplete-rsense.vim'
 " rsenseの自動補完をon
 let g:rsenseUseOmniFunc = 1
 
-" rsenseの位置は環境変数で指定する
-" let g:rsenseHome = "${RSENSE_HOME}"
 
 " linter
 NeoBundle 'scrooloose/syntastic'
@@ -277,23 +277,27 @@ NeoBundle 'yuku-t/vim-ref-ri'
 " Rubyのendを自動入力
 NeoBundle 'tpope/vim-endwise'
 
-" ファイルランチャ
-NeoBundle 'Shougo/unite.vim'
-" unite {{{
-let g:unite_enable_start_insert=1
-nmap <silent> <C-u><C-b> :<C-u>Unite buffer<CR>
-nmap <silent> <C-u><C-f> :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nmap <silent> <C-u><C-r> :<C-u>Unite -buffer-name=register register<CR>
-nmap <silent> <C-u><C-m> :<C-u>Unite file_mru<CR>
-nmap <silent> <C-u><C-u> :<C-u>Unite buffer file_mru<CR>
-nmap <silent> <C-u><C-a> :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-au FileType unite nmap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-au FileType unite imap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-au FileType unite nmap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-au FileType unite imap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-au FileType unite nmap <silent> <buffer> <ESC><ESC> q
-au FileType unite imap <silent> <buffer> <ESC><ESC> <ESC>q
-" }}}
+" -----------------------
+" unite: ファイルランチャ
+" -----------------------
+if v:version >= 703
+  NeoBundle 'Shougo/unite.vim'
+  " unite {{{
+  let g:unite_enable_start_insert=1
+  nmap <silent> <C-u><C-b> :<C-u>Unite buffer<CR>
+  nmap <silent> <C-u><C-f> :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+  nmap <silent> <C-u><C-r> :<C-u>Unite -buffer-name=register register<CR>
+  nmap <silent> <C-u><C-m> :<C-u>Unite file_mru<CR>
+  nmap <silent> <C-u><C-u> :<C-u>Unite buffer file_mru<CR>
+  nmap <silent> <C-u><C-a> :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+  au FileType unite nmap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+  au FileType unite imap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+  au FileType unite nmap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+  au FileType unite imap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+  au FileType unite nmap <silent> <buffer> <ESC><ESC> q
+  au FileType unite imap <silent> <buffer> <ESC><ESC> <ESC>q
+  " }}}
+endif
 
 call neobundle#end() " プラグイン記述ここまで
 NeoBundleCheck " インストールされていないものを自動でインストール
