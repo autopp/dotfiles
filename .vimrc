@@ -311,6 +311,9 @@ inoremap <CR> <CR>X<C-h>
 " 行末空白を保存時に削除
 autocmd BufWritePre * :%s/\s\+$//ge
 
+" 編集中ファイルのディレクトリへ移動
+au BufEnter * execute ":lcd " . expand("%:p:h")
+
 syntax on
 filetype on
 filetype indent on
