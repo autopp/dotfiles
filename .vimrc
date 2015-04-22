@@ -302,6 +302,15 @@ endif
 call neobundle#end() " プラグイン記述ここまで
 NeoBundleCheck " インストールされていないものを自動でインストール
 
+" 空行インデントの削除を抑制
+" 参考: http://yakinikunotare.boo.jp/orebase/index.php?Vim%2F%B6%F5%B9%D4%A4%CE%A5%A4%A5%F3%A5%C7%A5%F3%A5%C8%A4%F2%BA%EF%BD%FC%A4%B7%A4%CA%A4%A4%A4%E8%A4%A6%A4%CB%A4%B9%A4%EB
+nnoremap o oX<C-h>
+nnoremap O OX<C-h>
+inoremap <CR> <CR>X<C-h>
+
+" 行末空白を保存時に削除
+autocmd BufWritePre * :%s/\s\+$//ge
+
 syntax on
 filetype on
 filetype indent on
