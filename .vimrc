@@ -32,6 +32,8 @@ inoremap "" ""<LEFT>
 inoremap '' ''<LEFT>
 inoremap ' ''<LEFT>
 
+colorscheme koehler
+
 function! DeleteParenthesesAdjoin()
   let pos = col(".") - 1  " カーソルの位置．1からカウント
   let str = getline(".")  " カーソル行の文字列
@@ -78,6 +80,33 @@ endif
 call neobundle#begin(expand('~/.vim/bundle')) " プラグイン記述ここから
 let g:neobundle_default_git_protocol='https'
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+" --------
+" sorround
+" --------
+" コマンドcsでクォート置換
+NeoBundle 'tpope/vim-surround'
+
+" -----------------------
+" vim-trailing-whitespace
+" -----------------------
+" 行末スペースを可視化
+NeoBundle 'bronson/vim-trailing-whitespace'
+
+" -----------------
+" vim-indent-guides
+" -----------------
+" インデントに色を付けて見やすくする
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
+" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
+
+" -------------
+" tocommnet_vim
+" -------------
+" 行選択後にCtrlハイフンでコメントアウト切り替え
+NeoBundle 'tomtom/tcomment_vim'
 
 " -----
 " NERDTree
