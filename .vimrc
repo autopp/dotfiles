@@ -60,6 +60,9 @@ endfunction
 " BackSpaceに割り当て
 inoremap <silent> <BS> <C-R>=DeleteParenthesesAdjoin()<CR>
 
+" matchitを有効化
+source $VIMRUNTIME/macros/matchit.vim
+
 " プラグイン管理
 if has('vim_starting')
   set nocompatible
