@@ -10,7 +10,6 @@ set number
 set showmatch
 set smarttab
 set ruler
-set colorcolumn=81
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
 set laststatus=2
