@@ -346,6 +346,10 @@ autocmd BufWritePre * :%s/\s\+$//ge
 " 編集中ファイルのディレクトリへ移動
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
+" 挿入モード時のショートカット
+inoremap <C-a> <Esc>^i
+inoremap <C-e> <End>
+
 syntax on
 filetype on
 filetype indent on
