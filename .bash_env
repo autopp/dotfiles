@@ -6,8 +6,6 @@ export PATH=$PATH:~/bin
 export LD_LIBRARY=~/bin
 export C_INCLUDE_PATH=$C_INCLUDE_PATH:~/.rbenv/versions/2.1.2/include/ruby-2.1.0:/home/auto/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-linux
 
-export DROPBOX=~/Dropbox
-export LUCA=${DROPBOX}/master/luca
 export PATH=$LUCA/bin:$PATH
 export PYTHONPATH=~/basil-read-only:$PYTHONPATH
 export PATH=$PATH:~/basil-read-only/basil/apps
