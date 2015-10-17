@@ -9,6 +9,8 @@ highlight Bell display:none
 " No auto focus
 set focuscontent
 
+" commandモードでIMEオフ
+style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
 set complete=sl
 

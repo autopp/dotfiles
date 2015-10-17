@@ -1,12 +1,13 @@
 [user]
-	email = autopp.inc@gmail.com
-	name = autopp
-  
+  email = autopp.inc@gmail.com
+  name = autopp
+
 [core]
   editor = vim
+  autoCRLF = false
 
 [alias]
   stat = status
   st = status
   co = checkout
-  
+  push-cur = !git push origin `git rev-parse --abbrev-ref HEAD`
