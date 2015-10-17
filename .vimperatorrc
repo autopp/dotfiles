@@ -1,0 +1,128 @@
+" =======
+" General
+" =======
+
+" Suppress beep
+set visualbell
+highlight Bell display:none
+
+" No auto focus
+set focuscontent
+
+
+set complete=sl
+
+" ============
+" Key Bindings
+"
+" nmap: Normal Mode
+" imap: Insert Mode
+" vmap: Visual Mode
+" cmap: Command Mode
+" omap: Waiting Operation Mode
+" map -> noremap
+" ============
+
+noremap ; :
+
+noremap c ;c
+
+" Disable adding bookmark
+map a <NOP>
+
+map h <NOP>
+map l <NOP>
+
+" スクロール幅 (5倍)
+noremap j 5<C-e>
+noremap k 5<C-y>
+noremap J <C-f>
+noremap K <C-b>
+
+" 前に検索結果
+noremap p N
+
+" ヒントに使う文字
+set hintchars=;asdfghjkl
+
+" 補完候補を上下キーでも選択できるようにする
+cnoremap <Up> <S-Tab>
+cnoremap <Down> <Tab>
+
+" コマンド履歴をたどる
+cnoremap <C-P> <Up>
+cnoremap <C-N> <Down>
+
+" copy.js
+javascript <<EOM
+  liberator.globalVariables.copy_templates = [
+    { label: 'title', value: '%TITLE%' },
+    { label: 'url', value: '%URL%' },
+    { label: 'anchor', value: '<a href="%URL%">%TITLE%</a>' },
+    { label: 'markdown', value: '[%TITLE%](%URL%)' },
+    { label: 'topic', value: '**%TITLE%**\n%URL%\n\n' }
+  ];
+EOM
+map CT :copy title<CR>
+map CU :copy url<CR>
+map CA :copy anchor<CR>
+map CM :copy markdown<CR>
+
+"ビジュアルモードで選択文字列を<C-g>でGoogle検索
+vmap <silent> <C-g> y<Esc><Esc>P
+
+" 設定再読み込み
+noremap S :source ~/.vimperatorrc<CR>
+
+" ======
+" Design
+" ======
+
+" Font size of status bar
+style chrome://* <<EOM
+#liberator-statusline {
+    font-family: Menlo, Consolas, Monaco, monospace !important;
+    font-weight: normal !important;
+    font-size: 12pt !important;
+    padding:2px 2px !important;
+}
+EOM
+
+" ステータスバー
+hi StatusLine color: #000; background: #BBB; font-weight: normal; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace;
+hi StatusLineSecure color: #000; background: #9CF; font-weight: normal;
+hi StatusLineExtended color: #000; background: #9FF; font-weight: normal;
+hi StatusLineBroken color: #FFF; background: #900; font-weight: normal;
+
+"" コマンドライン
+hi CmdLine color: #000; background: #FFF; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; padding: 2px;
+hi Normal color: #000; background: #FFF; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " 通常時テキスト
+hi InfoMsg color: #000; background: #FFF; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; "通知メッセージ
+hi ModeMsg color: #000; background: #FFF; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; "モード表示
+hi MoreMsg color: #000; background: #FFF; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; "さらにモード表示
+hi ErrorMsg color: #FFF; background: #F00; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " エラーメッセージ
+hi LineNr color: #F00; background: #FFF; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " エラーの行番号
+
+"" 補完リスト
+hi CompTitle font-weight: bold; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " タイトル
+hi CompResult width: 45%; overflow: hidden; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " 結果欄（左側）
+hi CompDesc width: 50%; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " 説明欄（右側）
+hi CompItem font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " 補完リストの1行
+hi CompItem[selected] color: #FFF; background: #000; font-weight: normal; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " 補完リストの選択している行
+hi Filter color: #06E; font-weight: bold; " 補完リストでマッチしたテキスト
+
+" リストに表示する最大数
+set maxitems=12
+
+" Calet
+set! ui.caretWidth=2
+
+" Hint
+highlight Hint font-family: Arial; font-size: 16px; font-weight: bold; text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black; color: #33cccc; text-transform: uppercase;
+highlight HintElem color: gray; background-color: #a1e4e6;
+highlight HintActive color: black; background-color: #ff8700;
+
+" Error message
+hi ErrorMsg color:black; background-color: #bbbbbb;
+
+echo 'Loaded from .vimperatorrc'
