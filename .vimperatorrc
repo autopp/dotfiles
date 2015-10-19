@@ -45,7 +45,7 @@ noremap K <C-b>
 noremap p N
 
 " ヒントに使う文字
-set hintchars=;asdfghjkl
+set hintchars=lasdfghjk
 
 " 補完候補を上下キーでも選択できるようにする
 cnoremap <Up> <S-Tab>
