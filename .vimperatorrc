@@ -62,13 +62,16 @@ javascript <<EOM
     { label: 'url', value: '%URL%' },
     { label: 'anchor', value: '<a href="%URL%">%TITLE%</a>' },
     { label: 'markdown', value: '[%TITLE%](%URL%)' },
-    { label: 'topic', value: '**%TITLE%**\n%URL%\n\n' }
+    { label: 'topic', value: '**%TITLE%**\n%URL%\n\n' },
+    { label: 'redmine', value: ' "%TITLE%":%URL% ' }
   ];
 EOM
 map CT :copy title<CR>
 map CU :copy url<CR>
 map CA :copy anchor<CR>
 map CM :copy markdown<CR>
+map CO :copy topic<CR>
+map CR :copy redmine<CR>
 
 "ビジュアルモードで選択文字列を<C-g>でGoogle検索
 vmap <silent> <C-g> y<Esc><Esc>P
