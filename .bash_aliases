@@ -4,6 +4,7 @@ alias cd='pushd > /dev/null'
 alias chd='pushd ~ > /dev/null'
 alias pop=popd
 alias bd=popd
+alias mless='less +F'
 
 if [[ $(uname) = 'Darwin' ]]; then
   alias ls='ls -oal -G -F'
