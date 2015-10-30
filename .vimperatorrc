@@ -59,6 +59,9 @@ cnoremap <C-N> <Down>
 cnoremap <C-Left> <A-Left>
 cnoremap <C-Right> <A-Right>
 
+cnoremap <C-S-Left> <A-S-Left>
+cnoremap <C-S-Right> <A-S-Right>
+
 " copy.js
 javascript <<EOM
   liberator.globalVariables.copy_templates = [
@@ -83,8 +86,8 @@ vmap <silent> <C-g> y<Esc><Esc>P
 inoremap <C-Left> <A-Left>
 inoremap <C-Right> <A-Right>
 
-inoremap <C-Shift-Left> <A-Shift-Left>
-inoremap <C-Shift-Right> <A-Shift-Right>
+inoremap <C-S-Left> <A-S-Left>
+inoremap <C-S-Right> <A-S-Right>
 
 " 設定再読み込み
 noremap S :source ~/.vimperatorrc<CR>
