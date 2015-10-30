@@ -55,6 +55,10 @@ cnoremap <Down> <Tab>
 cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
+" 単語単位のカーソル移動
+cnoremap <C-Left> <A-Left>
+cnoremap <C-Right> <A-Right>
+
 " copy.js
 javascript <<EOM
   liberator.globalVariables.copy_templates = [
@@ -75,6 +79,12 @@ map CR :copy redmine<CR>
 
 "ビジュアルモードで選択文字列を<C-g>でGoogle検索
 vmap <silent> <C-g> y<Esc><Esc>P
+
+inoremap <C-Left> <A-Left>
+inoremap <C-Right> <A-Right>
+
+inoremap <C-Shift-Left> <A-Shift-Left>
+inoremap <C-Shift-Right> <A-Shift-Right>
 
 " 設定再読み込み
 noremap S :source ~/.vimperatorrc<CR>
