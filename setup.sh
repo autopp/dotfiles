@@ -25,7 +25,7 @@ echo "# Environment specific configuration" >> ~/.zshrc
 
 # Setup vim
 backup ~/.vimrc
-echo "source ${dir}/.vimrc" > ~/.zshrc
+echo "source ${dir}/.vimrc" > ~/.vimrc
 
 # Setup git
 backup ~/.gitconfig
