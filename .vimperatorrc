@@ -62,6 +62,9 @@ cnoremap <C-Right> <A-Right>
 cnoremap <C-S-Left> <A-S-Left>
 cnoremap <C-S-Right> <A-S-Right>
 
+" ブックマークを開く
+noremap B :o * 
+
 " copy.js
 javascript <<EOM
   liberator.globalVariables.copy_templates = [
