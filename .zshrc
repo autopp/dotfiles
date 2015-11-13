@@ -41,7 +41,6 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 ## 重複パスを登録しない
 typeset -U path cdpath fpath manpath
 
-export HOMEBREW_GITHUB_API_TOKEN=fd3fdf616023ca61f6a0deb447bab5912c7d4d9f
 export EDITOR=vim
 export PATH=$HOME/bin:$PATH
 
@@ -58,6 +57,7 @@ if [[ -d "${HOME}/.rbenv" ]]; then
   eval "$(rbenv init - zsh)"
 fi
 
+alias bd=popd
 alias mless='less +F'
 
 if [[ $(uname) = 'Darwin' ]]; then
