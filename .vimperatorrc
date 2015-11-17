@@ -63,7 +63,7 @@ cnoremap <C-S-Left> <A-S-Left>
 cnoremap <C-S-Right> <A-S-Right>
 
 " ブックマークを開く
-noremap B :o * 
+noremap B :o *
 
 " copy.js
 javascript <<EOM
@@ -73,7 +73,7 @@ javascript <<EOM
     { label: 'anchor', value: '<a href="%URL%">%TITLE%</a>' },
     { label: 'markdown', value: '[%TITLE%](%URL%)' },
     { label: 'topic', value: '**%TITLE%**\n%URL%\n\n' },
-    { label: 'redmine', value: ' "%TITLE%":%URL% ' }
+    { label: 'redmine', value: '"%TITLE%":%URL%' }
   ];
 EOM
 map CT :copy title<CR>
