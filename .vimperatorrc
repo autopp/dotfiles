@@ -73,7 +73,20 @@ javascript <<EOM
     { label: 'anchor', value: '<a href="%URL%">%TITLE%</a>' },
     { label: 'markdown', value: '[%TITLE%](%URL%)' },
     { label: 'topic', value: '**%TITLE%**\n%URL%\n\n' },
-    { label: 'redmine', value: '"%TITLE%":%URL%' }
+    { label: 'redmine', value: '"%TITLE%":%URL%' },
+    {
+      label: 'dialy',
+      custom: function () {
+        var title = content.document.title;
+        var m = title.match(/^.+(#\d+.+) - Kanseito.+ - Kanseito Redmine$/);
+        if (m) {
+          return m[1];
+        }
+        else {
+          return "";
+        }
+      }
+    }
   ];
 EOM
 map CT :copy title<CR>
@@ -82,7 +95,7 @@ map CA :copy anchor<CR>
 map CM :copy markdown<CR>
 map CO :copy topic<CR>
 map CR :copy redmine<CR>
-
+map CD :copy dialy<CR>
 "ビジュアルモードで選択文字列を<C-g>でGoogle検索
 vmap <silent> <C-g> y<Esc><Esc>P
 
