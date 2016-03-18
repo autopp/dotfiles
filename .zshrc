@@ -52,7 +52,7 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # 前回のコマンドの最後の引数挿入
-bindkey "^." insert-last-word
+bindkey '^]' insert-last-word
 
 # setting rbenv
 if [[ -d "${HOME}/.rbenv" ]]; then
