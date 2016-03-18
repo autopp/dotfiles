@@ -123,7 +123,7 @@ style chrome://* <<EOM
 EOM
 
 " ステータスバー
-hi StatusLine color: #000; background: #BBB; font-weight: normal; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace;
+hi StatusLine color: #000; background: #BBB; font-weight: normal; font-size: 10pt; font-family: Menlo, Consolas, Monaco, monospace;
 hi StatusLineSecure color: #000; background: #9CF; font-weight: normal;
 hi StatusLineExtended color: #000; background: #9FF; font-weight: normal;
 hi StatusLineBroken color: #FFF; background: #900; font-weight: normal;
@@ -138,11 +138,11 @@ hi ErrorMsg color: #FFF; background: #F00; font-size: 12pt; font-family: Menlo, 
 hi LineNr color: #F00; background: #FFF; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " エラーの行番号
 
 "" 補完リスト
-hi CompTitle font-weight: bold; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " タイトル
-hi CompResult width: 45%; overflow: hidden; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " 結果欄（左側）
-hi CompDesc width: 50%; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " 説明欄（右側）
-hi CompItem font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " 補完リストの1行
-hi CompItem[selected] color: #FFF; background: #000; font-weight: normal; font-size: 12pt; font-family: Menlo, Consolas, Monaco, monospace; " 補完リストの選択している行
+hi CompTitle font-weight: bold; font-size: 10pt; font-family: Menlo, Consolas, Monaco, monospace; " タイトル
+hi CompResult width: 30%; overflow: hidden; font-size: 10pt; font-family: Menlo, Consolas, Monaco, monospace; " 結果欄（左側）
+hi CompDesc width: 70%; font-size: 10pt; font-family: Menlo, Consolas, Monaco, monospace; " 説明欄（右側）
+"hi CompItem font-size: 10pt; font-family: Menlo, Consolas, Monaco, monospace; " 補完リストの1行
+hi CompItem[selected] color: #FFF; background: #000; font-weight: normal; font-size: 10pt; font-family: Menlo, Consolas, Monaco, monospace; " 補完リストの選択している行
 hi Filter color: #06E; font-weight: bold; " 補完リストでマッチしたテキスト
 
 " リストに表示する最大数
