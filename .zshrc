@@ -64,13 +64,13 @@ alias bd=popd
 alias mless='less +F'
 
 if [[ $(uname) = 'Darwin' ]]; then
-  alias ls='ls -oal -G -F'
-  alias lal='ls -oal -G -F'
-  alias lla='ls -ola -G -F'
+  alias ls='ls -oalh -G -F'
+  alias lal='ls -oalh -G -F'
+  alias lla='ls -olah -G -F'
 else
-  alias ls='ls -oal --color -F'
-  alias lal='ls -oal --color -F'
-  alias lla='ls -ola --color -F'
+  alias ls='ls -oalh --color -F'
+  alias lal='ls -oalh --color -F'
+  alias lla='ls -olah --color -F'
 fi
 
 # scalaenv の設定
