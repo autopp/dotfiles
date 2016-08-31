@@ -27,6 +27,8 @@ compinit -u
 
 alias brspec='bundle exec rspec'
 alias brubocop='bundle exec rubocop'
+alias brake='bundle exec rake'
+alias bexec='bundle exec'
 
 # <Tab> でパス名の補完候補を表示したあと、
 # 続けて <Tab> を押すと候補からパス名を選択できるようになる
