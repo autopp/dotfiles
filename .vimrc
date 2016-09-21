@@ -269,14 +269,6 @@ if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
   let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 endif
 
-" rsense
-NeoBundle 'marcus/rsense'
-NeoBundle 'supermomonga/neocomplete-rsense.vim'
-
-" rsenseの自動補完をon
-let g:rsenseUseOmniFunc = 1
-
-
 " linter
 NeoBundle 'scrooloose/syntastic'
 " syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
