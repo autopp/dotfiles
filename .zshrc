@@ -28,6 +28,7 @@ compinit -u
 alias brspec='bundle exec rspec'
 alias brubocop='bundle exec rubocop'
 alias brake='bundle exec rake'
+alias brails='bundle exec rails'
 alias bexec='bundle exec'
 
 # <Tab> でパス名の補完候補を表示したあと、
