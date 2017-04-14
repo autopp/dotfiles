@@ -27,6 +27,10 @@ source $ZSH/oh-my-zsh.sh|g' ~/.zshrc
 echo "source ${dir}/.zshrc" >> ~/.zshrc
 echo "# Environment specific configuration" >> ~/.zshrc
 
+# replace bash to zsh
+backup ~/.bash_profile
+cp ${dir}/.bash_profile ~/.bash_profile
+
 # Setup vim
 backup ~/.vimrc
 echo "source ${dir}/.vimrc" > ~/.vimrc
