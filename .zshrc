@@ -81,3 +81,9 @@ if [[ -d ${HOME}/.scalaenv ]]; then
   export PATH="${HOME}/.scalaenv/bin:${PATH}"
   eval "$(scalaenv init -)"
 fi
+
+# goenv の設定
+if goenv commands >/dev/null; then
+  export PATH="$HOME/.goenv/bin:$PATH"
+  eval "$(goenv init -)"
+fi
