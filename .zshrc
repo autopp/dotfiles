@@ -87,3 +87,8 @@ if goenv commands >/dev/null; then
   export PATH="$HOME/.goenv/bin:$PATH"
   eval "$(goenv init -)"
 fi
+
+if go version >/dev/null 2>&1; then
+  export GOPATH=~/go
+  export PATH=$GOPATH/bin:$PATH
+fi
