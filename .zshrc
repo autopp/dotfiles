@@ -83,7 +83,7 @@ if [[ -d ${HOME}/.scalaenv ]]; then
 fi
 
 # goenv の設定
-if goenv commands >/dev/null; then
+if [[ -d ${HOME}/.goenv ]]; then
   export PATH="$HOME/.goenv/bin:$PATH"
   eval "$(goenv init -)"
 fi
