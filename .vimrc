@@ -319,6 +319,9 @@ if v:version >= 703
   " }}}
 endif
 
+" vim-go
+NeoBundle 'fatih/vim-go'
+
 call neobundle#end() " プラグイン記述ここまで
 NeoBundleCheck " インストールされていないものを自動でインストール
 
