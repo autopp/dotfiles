@@ -294,10 +294,6 @@ NeoBundle 'Shougo/vimproc', {
   \    },
   \ }
 
-" Rubyドキュメント参照
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'yuku-t/vim-ref-ri'
-
 " Rubyのendを自動入力
 NeoBundle 'tpope/vim-endwise'
 
