@@ -1,11 +1,18 @@
-# 文字コードの指定
-export LANG=ja_JP.UTF-8
+source ~/.zplug/init.zsh
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+zplug "zsh-users/zsh-completions"
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin":${PATH}
 
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
 
 # cdなしでディレクトリ移動
 setopt auto_cd
+
+# =以降も補完する(--prefix=/usrなど)
+setopt magic_equal_subst
 
 # ビープ音の停止
 setopt no_beep
@@ -16,21 +23,7 @@ setopt nolistbeep
 # cd -<tab>で以前移動したディレクトリを表示
 setopt auto_pushd
 
-# キーバインディングをemacs風に(-vはvim)
-bindkey -e
-
-# zsh-completionsの設定
-fpath=(/path/to/homebrew/share/zsh-completions $fpath)
-
-autoload -U compinit
-compinit -u
-
-alias brspec='bundle exec rspec'
-alias brubocop='bundle exec rubocop'
-alias brake='bundle exec rake'
-alias brails='bundle exec rails'
-alias bexec='bundle exec'
-
+# Completion
 # <Tab> でパス名の補完候補を表示したあと、
 # 続けて <Tab> を押すと候補からパス名を選択できるようになる
 # 候補を選ぶには <Tab> か Ctrl-N,B,F,P
@@ -44,25 +37,20 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 ## 重複パスを登録しない
 typeset -U path cdpath fpath manpath
 
-export EDITOR=vim
-export PATH=$HOME/bin:$PATH
+# キーバインディングをemacs風に(-vはvim)
+bindkey -e
 
-# コマンド履歴検索
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
+bindkey "^[[Z" reverse-menu-complete
 
 # 前回のコマンドの最後の引数挿入
 bindkey '^]' insert-last-word
 
-# setting rbenv
-if [[ -d "${HOME}/.rbenv" ]]; then
-  export PATH="${HOME}/.rbenv/bin:${PATH}"
-  eval "$(rbenv init - zsh)"
-fi
-
+# Alias
 alias bd=popd
 alias mless='less +F'
 
@@ -76,19 +64,34 @@ else
   alias lla='ls -olah --color -F'
 fi
 
-# scalaenv の設定
-if [[ -d ${HOME}/.scalaenv ]]; then
-  export PATH="${HOME}/.scalaenv/bin:${PATH}"
-  eval "$(scalaenv init -)"
+alias brspec='bundle exec rspec'
+alias brubocop='bundle exec rubocop'
+alias brake='bundle exec rake'
+alias brails='bundle exec rails'
+alias bexec='bundle exec'
+
+# rbenv
+if [[ -d "${HOME}/.rbenv" ]]; then
+  export PATH="${HOME}/.rbenv/bin:${PATH}"
+  eval "$(rbenv init - zsh)"
 fi
 
-# goenv の設定
-if [[ -d ${HOME}/.goenv ]]; then
-  export PATH="$HOME/.goenv/bin:$PATH"
-  eval "$(goenv init -)"
+# theme
+zplug "~/dotfiles", use:"kphoen-autopp.zsh-theme", from:local, as:theme, defer:3
+
+if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
+  touch ~/.zplug/last_zshrc_check_time
+  if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+      echo; zplug install
+    fi
+  fi
 fi
 
-if go version >/dev/null 2>&1; then
-  export GOPATH=~/go
-  export PATH=$GOPATH/bin:$PATH
+# local settings
+if [ -f ~/.local.zsh ]; then
+  source ~/.local.zsh
 fi
+
+zplug load
