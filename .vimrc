@@ -18,20 +18,6 @@ inoremap <s-tab> <Esc><<i
 nnoremap <s-tab> <<
 
 set t_ut=
-inoremap {<Enter> {<CR>}<Esc><S-o>
-inoremap { {}<LEFT>
-inoremap {} {}
-inoremap [<Enter> [<CR>]<Esc><S-o>
-inoremap [ []<LEFT>
-inoremap [] []
-inoremap (<Enter> (<CR>)<Esc><S-o>
-inoremap ( ()<LEFT>
-inoremap () ()
-inoremap " ""<LEFT>
-inoremap "" ""<LEFT>
-inoremap '' ''<LEFT>
-inoremap ' ''<LEFT>
-
 colorscheme koehler
 
 function! DeleteParenthesesAdjoin()
@@ -80,6 +66,8 @@ endif
 call neobundle#begin(expand('~/.vim/bundle')) " プラグイン記述ここから
 let g:neobundle_default_git_protocol='https'
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'cohama/lexima.vim'
 
 " --------
 " sorround
