@@ -39,6 +39,8 @@ typeset -U path cdpath fpath manpath
 
 # キーバインディングをemacs風に(-vはvim)
 bindkey -e
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word
 
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
