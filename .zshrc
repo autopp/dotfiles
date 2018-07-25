@@ -20,8 +20,29 @@ setopt no_beep
 # ビープ音の停止(補完時)
 setopt nolistbeep
 
+# 履歴の保存場所
+HISTFILE=~/.zsh_history
+
+# メモリ内の履歴の数
+HISTSIZE=10000
+
+# 保存される履歴の数
+SAVEHIST=100000
+
+# 履歴ファイルに時刻を記録
+setopt extended_history
+
 # cd -<tab>で以前移動したディレクトリを表示
 setopt auto_pushd
+
+# 複数の zsh を同時に使う時など history ファイルに上書きせず追加
+setopt append_history
+
+# コマンドが入力されるとすぐに追加
+setopt inc_append_history
+
+# 履歴をプロセス間で共有
+setopt share_history
 
 # Completion
 # <Tab> でパス名の補完候補を表示したあと、
