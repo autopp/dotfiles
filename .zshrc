@@ -3,7 +3,7 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 zplug "zsh-users/zsh-completions"
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin":${PATH}
+export PATH="${HOME}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:"${PATH}
 
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
