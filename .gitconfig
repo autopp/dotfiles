@@ -11,3 +11,7 @@
   st = status
   co = checkout
   push-cur = !git push origin `git rev-parse --abbrev-ref HEAD`
+
+[url "git@github.com:"]
+  pushInsteadOf = https://github.com
+  insteadOf = https://github.com
