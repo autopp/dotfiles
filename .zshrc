@@ -112,6 +112,17 @@ if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
   fi
 fi
 
+# ghq & peco
+alias repo='ghq list -p | peco'
+function editrepo() {
+  local r
+  r=$(repo)
+  if [ -z "$r" ]; then
+    return
+  fi
+  cd ${r} && atom ${r}
+}
+
 # local settings
 if [ -f ~/.local.zsh ]; then
   source ~/.local.zsh
