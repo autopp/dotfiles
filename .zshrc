@@ -129,3 +129,5 @@ if [ -f ~/.local.zsh ]; then
 fi
 
 zplug load
+
+compinit -u
