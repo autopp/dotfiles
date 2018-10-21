@@ -99,6 +99,11 @@ if [[ -d "${HOME}/.rbenv" ]]; then
   eval "$(rbenv init - zsh)"
 fi
 
+# go
+if [[ -d "${HOME}/go/bin"  ]]; then
+  export PATH="${HOME}/go/bin:${PATH}"
+fi
+
 # theme
 zplug "~/dotfiles", use:"kphoen-autopp.zsh-theme", from:local, as:theme, defer:3
 
