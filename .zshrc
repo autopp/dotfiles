@@ -128,6 +128,11 @@ function editrepo() {
   cd ${r} && atom ${r}
 }
 
+# hub
+if which hub >/dev/null 2>&1; then
+  alias git=hub
+fi
+
 # local settings
 if [ -f ~/.local.zsh ]; then
   source ~/.local.zsh
