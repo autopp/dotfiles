@@ -121,10 +121,11 @@ fi
 alias repo='ghq list -p | peco'
 function editrepo() {
   local r
-  r=$(repo)
+  r=$(ghq list -p | sed -e "s|^${HOME}/||g" | peco)
   if [ -z "$r" ]; then
     return
   fi
+  r=${HOME}/$r
   cd ${r} && atom ${r}
 }
 
