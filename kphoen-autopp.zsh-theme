@@ -1,7 +1,7 @@
 # kphoen.zsh-theme
 
 if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
-    PROMPT='[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]$(git_prompt_status)  ${return_code}%{$reset_color%}
+    PROMPT='[$(date +"%H:%M:%S") %{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]$(git_prompt_status)  ${return_code}%{$reset_color%}
 \$ '
 
     ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[green]%}"
