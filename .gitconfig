@@ -10,6 +10,7 @@
   stat = status
   st = status
   co = checkout
+  amend = commit --amend --no-edit
   push-cur = !git push origin `git rev-parse --abbrev-ref HEAD`
 
 [url "git@github.com:"]
