@@ -129,6 +129,8 @@ function editrepo() {
   cd ${r} && atom ${r}
 }
 
+alias gotorepo='cd $(repo)'
+
 # hub
 if which hub >/dev/null 2>&1; then
   alias git=hub
