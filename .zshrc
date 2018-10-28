@@ -129,7 +129,14 @@ function editrepo() {
   cd ${r} && atom ${r}
 }
 
-alias gotorepo='cd $(repo)'
+function gotorepo() {
+  local r=$(ghq list -p | sed -e "s|^${HOME}/||g" | peco)
+  if [ -z "$r" ]; then
+    return
+  fi
+  r=${HOME}/$r
+  cd ${r}
+}
 
 # hub
 if which hub >/dev/null 2>&1; then
