@@ -104,6 +104,11 @@ if [[ -d "${HOME}/go/bin"  ]]; then
   export PATH="${HOME}/go/bin:${PATH}"
 fi
 
+# nodebrew
+if [[ -d "${HOME}/.nodebrew" ]]; then
+  export PATH="${HOME}/.nodebrew/current/bin:$PATH"
+fi
+
 # theme
 zplug "~/dotfiles", use:"kphoen-autopp.zsh-theme", from:local, as:theme, defer:3
 
