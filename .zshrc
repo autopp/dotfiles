@@ -93,6 +93,8 @@ alias brake='bundle exec rake'
 alias brails='bundle exec rails'
 alias bexec='bundle exec'
 
+alias rm='rm -i'
+
 # rbenv
 if [[ -d "${HOME}/.rbenv" ]]; then
   export PATH="${HOME}/.rbenv/bin:${PATH}"
