@@ -131,23 +131,29 @@ if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
 fi
 
 # ghq & peco
-alias repo='ghq list -p | peco'
-function editrepo() {
+function repo() {
   local r
   r=$(ghq list -p | sed -e "s|^${HOME}/||g" | peco)
   if [ -z "$r" ]; then
     return
   fi
-  r=${HOME}/$r
+  echo ${HOME}/$r
+}
+
+function editrepo() {
+  local r
+  r=$(repo)
+  if [ -z "$r" ]; then
+    return
+  fi
   cd ${r} && atom ${r}
 }
 
 function gotorepo() {
-  local r=$(ghq list -p | sed -e "s|^${HOME}/||g" | peco)
+  local r=$(repo)
   if [ -z "$r" ]; then
     return
   fi
-  r=${HOME}/$r
   cd ${r}
 }
 
