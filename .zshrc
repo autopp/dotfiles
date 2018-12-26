@@ -157,6 +157,14 @@ function gotorepo() {
   cd ${r}
 }
 
+function atomrepo() {
+  local r=$(repo)
+  if [ -z "$r" ]; then
+    return
+  fi
+  atom ${r}
+}
+
 # hub
 if which hub >/dev/null 2>&1; then
   alias git=hub
