@@ -133,7 +133,7 @@ fi
 # ghq & peco
 function repo() {
   local r
-  r=$(ghq list -p | sed -e "s|^${HOME}/||g" | peco)
+  r=$(ghq list -p | sed -e "s|^${HOME}/||g" | peco --query="$*")
   if [ -z "$r" ]; then
     return
   fi
@@ -142,7 +142,7 @@ function repo() {
 
 function editrepo() {
   local r
-  r=$(repo)
+  r=$(repo $*)
   if [ -z "$r" ]; then
     return
   fi
@@ -150,7 +150,7 @@ function editrepo() {
 }
 
 function gotorepo() {
-  local r=$(repo)
+  local r=$(repo $*)
   if [ -z "$r" ]; then
     return
   fi
@@ -158,7 +158,7 @@ function gotorepo() {
 }
 
 function atomrepo() {
-  local r=$(repo)
+  local r=$(repo $*)
   if [ -z "$r" ]; then
     return
   fi
