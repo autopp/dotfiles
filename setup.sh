@@ -35,3 +35,7 @@ cat > ~/.gitconfig <<EOS
 [include]
   path = ${dir}/.gitconfig
 EOS
+
+# Setup rubocop
+backup ~/.rubocop.yml
+ln -s ${dir}/.rubocop.yml ~/.rubocop.yml
