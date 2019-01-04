@@ -1,11 +1,32 @@
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.5
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
 
 Style/AsciiComments:
   Enabled: false
 
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/NegatedWhile:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
 Metrics/LineLength:
-  Max: 100
+  Max: 120
 
 Metrics/MethodLength:
   Max: 15
@@ -16,5 +37,14 @@ Metrics/ClassLength:
 Metrics/AbcSize:
   Max: 20
 
-Style/BracesAroundHashParameters:
+Metrics/PerceivedComplexity:
+  Max: 8
+
+Metrics/CyclomaticComplexity:
+  Max: 7
+
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+
+Bundler/OrderedGems:
   Enabled: false
