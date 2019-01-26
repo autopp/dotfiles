@@ -146,7 +146,7 @@ function editrepo() {
   if [ -z "$r" ]; then
     return
   fi
-  cd ${r} && atom ${r}
+  cd ${r} && code ${r}
 }
 
 function gotorepo() {
@@ -157,12 +157,12 @@ function gotorepo() {
   cd ${r}
 }
 
-function atomrepo() {
+function coderepo() {
   local r=$(repo $*)
   if [ -z "$r" ]; then
     return
   fi
-  atom ${r}
+  code ${r}
 }
 
 # hub
