@@ -165,6 +165,8 @@ function coderepo() {
   code ${r}
 }
 
+hash -d github.com="$(ghq root)/github.com"
+
 # hub
 if which hub >/dev/null 2>&1; then
   alias git=hub
