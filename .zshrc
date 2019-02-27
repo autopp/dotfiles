@@ -165,7 +165,9 @@ function coderepo() {
   code ${r}
 }
 
-hash -d github.com="$(ghq root)/github.com"
+if which ghq >/dev/null 2>&1; then
+  hash -d github.com="$(ghq root)/github.com"
+fi
 
 # hub
 if which hub >/dev/null 2>&1; then
