@@ -12,6 +12,7 @@
   co = checkout
   amend = commit --amend --no-edit
   push-cur = !git push origin `git rev-parse --abbrev-ref HEAD`
+  prs = pr list -f '%U %t%n'
 
 [url "git@github.com:"]
   pushInsteadOf = https://github.com
