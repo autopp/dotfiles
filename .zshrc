@@ -167,7 +167,7 @@ function coderepo() {
 
 if which ghq >/dev/null 2>&1; then
   hash -d github.com="$(ghq root)/github.com"
-  hash -d autopp="~github.com/autopp"
+  hash -d autopp=~github.com/autopp
 fi
 
 # hub
