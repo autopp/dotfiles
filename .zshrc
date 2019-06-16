@@ -41,9 +41,6 @@ setopt append_history
 # コマンドが入力されるとすぐに追加
 setopt inc_append_history
 
-# 履歴をプロセス間で共有
-setopt share_history
-
 # Completion
 # <Tab> でパス名の補完候補を表示したあと、
 # 続けて <Tab> を押すと候補からパス名を選択できるようになる
