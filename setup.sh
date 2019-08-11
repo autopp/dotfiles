@@ -29,6 +29,10 @@ cp ${dir}/.bash_profile ~/.bash_profile
 backup ~/.vimrc
 echo "source ${dir}/.vimrc" > ~/.vimrc
 
+# Setup nano
+backup ~/.nanorc
+cp ${dir}/.nanorc ~/.nanorc
+
 # Setup git
 backup ~/.gitconfig
 cat > ~/.gitconfig <<EOS
