@@ -127,6 +127,9 @@ if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
   fi
 fi
 
+# openapi-generator
+alias openapi-generator-cli="java -jar '$(ghq root)/github.com/OpenAPITools/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar'"
+
 # ghq & peco
 function repo() {
   local r
