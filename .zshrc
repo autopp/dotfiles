@@ -105,7 +105,7 @@ if [[ -d "${HOME}/.goenv" ]]; then
   eval "$(goenv init -)"
 fi
 
-if which go version >/dev/null 2>&1; then
+if go version >/dev/null 2>&1; then
   export PATH="${HOME}/go/bin:${PATH}"
 fi
 
