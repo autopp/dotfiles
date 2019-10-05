@@ -25,6 +25,11 @@ ln -s ${dir}/.zshrc ~/.zshrc
 backup ~/.bash_profile
 cp ${dir}/.bash_profile ~/.bash_profile
 
+# Setup peco
+backup ~/.peco/config.json
+mkdir -p ~/.peco
+cp ${dir}/peco.json ~/.peco/config.json
+
 # Setup vim
 backup ~/.vimrc
 echo "source ${dir}/.vimrc" > ~/.vimrc
