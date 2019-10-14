@@ -98,13 +98,6 @@ if [[ -d "${HOME}/.rbenv" ]]; then
   eval "$(rbenv init - zsh)"
 fi
 
-# go
-if [[ -d "${HOME}/.goenv" ]]; then
-  export GOENV_ROOT="$HOME/.goenv"
-  export PATH="$GOENV_ROOT/bin:$PATH"
-  eval "$(goenv init -)"
-fi
-
 if go version >/dev/null 2>&1; then
   export PATH="${HOME}/go/bin:${PATH}"
 fi
