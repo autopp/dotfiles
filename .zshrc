@@ -52,9 +52,6 @@ zstyle ':completion:*:default' menu select=1
 # こうすると、 Ctrl-W でカーソル前の1単語を削除したとき、 / までで削除が止まる
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
-## 重複パスを登録しない
-typeset -U path cdpath fpath manpath
-
 # キーバインディングをemacs風に(-vはvim)
 bindkey -e
 bindkey ";5C" forward-word
@@ -174,5 +171,8 @@ if [ -f ~/.local.zsh ]; then
 fi
 
 zplug load
+
+# パスの重複を削除する
+typeset -U path cdpath fpath manpath
 
 compinit -u
