@@ -73,12 +73,8 @@ alias mless='less +F'
 
 if [[ $(uname) = 'Darwin' ]]; then
   alias ls='ls -oalh -G -F'
-  alias lal='ls -oalh -G -F'
-  alias lla='ls -olah -G -F'
 else
   alias ls='ls -oalh --color -F'
-  alias lal='ls -oalh --color -F'
-  alias lla='ls -olah --color -F'
 fi
 
 alias brspec='bundle exec rspec'
