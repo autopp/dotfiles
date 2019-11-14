@@ -70,8 +70,9 @@ bindkey '^]' insert-last-word
 # Alias
 alias bd=popd
 alias mless='less +F'
-
-if [[ $(uname) = 'Darwin' ]]; then
+if which exa >/dev/null 2>&1; then
+  alias ls='exa -al'
+elif [[ $(uname) = 'Darwin' ]]; then
   alias ls='ls -oalh -G -F'
 else
   alias ls='ls -oalh --color -F'
