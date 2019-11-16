@@ -70,7 +70,7 @@ bindkey '^]' insert-last-word
 # Alias
 alias bd=popd
 alias mless='less +F'
-if which exa >/dev/null 2>&1; then
+if builtin command -v exa >/dev/null 2>&1; then
   alias ls='exa -al'
 elif [[ $(uname) = 'Darwin' ]]; then
   alias ls='ls -oalh -G -F'
@@ -115,7 +115,7 @@ if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
 fi
 
 # openapi-generator
-if which ghq >/dev/null 2>&1; then
+if builtin command -v ghq >/dev/null 2>&1; then
   alias openapi-generator-cli="java -jar '$(ghq root)/github.com/OpenAPITools/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar'"
 fi
 
@@ -154,13 +154,13 @@ function coderepo() {
   code ${r}
 }
 
-if which ghq >/dev/null 2>&1; then
+if builtin command -v ghq >/dev/null 2>&1; then
   hash -d github.com="$(ghq root)/github.com"
   hash -d autopp=~github.com/autopp
 fi
 
 # hub
-if which hub >/dev/null 2>&1; then
+if builtin command -v hub >/dev/null 2>&1; then
   alias git=hub
 fi
 
