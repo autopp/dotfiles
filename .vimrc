@@ -308,7 +308,7 @@ if v:version >= 703
 endif
 
 " vim-go
-if executable('go')
+if executable('go') && v:version >= 800
   NeoBundle 'fatih/vim-go'
 endif
 
