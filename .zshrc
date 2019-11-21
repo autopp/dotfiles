@@ -156,7 +156,6 @@ function coderepo() {
 
 if builtin command -v ghq >/dev/null 2>&1; then
   hash -d github.com="$(ghq root)/github.com"
-  hash -d autopp=~github.com/autopp
 fi
 
 # hub
