@@ -107,10 +107,7 @@ zplug "~/dotfiles", use:"kphoen-autopp.zsh-theme", from:local, as:theme, defer:3
 if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
   touch ~/.zplug/last_zshrc_check_time
   if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-      echo; zplug install
-    fi
+    zplug install
   fi
 fi
 
