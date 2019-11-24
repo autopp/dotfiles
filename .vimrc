@@ -90,18 +90,6 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
 
-" -------------
-" tocommnet_vim
-" -------------
-" 行選択後にCtrlハイフンでコメントアウト切り替え
-NeoBundle 'tomtom/tcomment_vim'
-
-" -----
-" NERDTree
-" -----
-NeoBundle 'scrooloose/nerdtree'
-nnoremap <silent><C-p> :NERDTreeToggle<CR>
-
 " ----------------
 " ステータスライン
 " ----------------
@@ -241,9 +229,9 @@ endfunction
 NeoBundle 'tpope/vim-fugitive'
 
 NeoBundle 'airblade/vim-gitgutter'
-let g:gitgutter_sign_added = '✚'
-let g:gitgutter_sign_modified = '➜'
-let g:gitgutter_sign_removed = '✘'
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = 'x'
 
 " コード補完
 if has('lua') && (v:version > 703 || v:version == 703 && has('patch885'))
@@ -259,13 +247,6 @@ endif
 
 " linter
 NeoBundle 'scrooloose/syntastic'
-" syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
-" active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'] }
-" ruby には rubocop を使う
-let g:syntastic_ruby_checkers = ['rubocop']
-" QuickFixを自動で出す
-" let g:syntastic_auto_loc_list = 1
 " :wq で閉じるときに linter を走らせない
 let g:syntastic_check_on_wq = 0
 
@@ -284,33 +265,6 @@ NeoBundle 'Shougo/vimproc', {
 
 " Rubyのendを自動入力
 NeoBundle 'tpope/vim-endwise'
-
-" -----------------------
-" unite: ファイルランチャ
-" -----------------------
-if v:version >= 703
-  NeoBundle 'Shougo/unite.vim'
-  " unite {{{
-  let g:unite_enable_start_insert=1
-  nmap <silent> <C-u><C-b> :<C-u>Unite buffer<CR>
-  nmap <silent> <C-u><C-f> :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-  nmap <silent> <C-u><C-r> :<C-u>Unite -buffer-name=register register<CR>
-  nmap <silent> <C-u><C-m> :<C-u>Unite file_mru<CR>
-  nmap <silent> <C-u><C-u> :<C-u>Unite buffer file_mru<CR>
-  nmap <silent> <C-u><C-a> :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-  au FileType unite nmap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-  au FileType unite imap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-  au FileType unite nmap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-  au FileType unite imap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-  au FileType unite nmap <silent> <buffer> <ESC><ESC> q
-  au FileType unite imap <silent> <buffer> <ESC><ESC> <ESC>q
-  " }}}
-endif
-
-" vim-go
-if executable('go') && v:version >= 800
-  NeoBundle 'fatih/vim-go'
-endif
 
 call neobundle#end() " プラグイン記述ここまで
 NeoBundleCheck " インストールされていないものを自動でインストール
@@ -335,4 +289,3 @@ syntax on
 filetype on
 filetype indent on
 filetype plugin on
-
