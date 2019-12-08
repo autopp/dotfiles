@@ -119,7 +119,7 @@ fi
 # ghq & peco
 function repo() {
   local r
-  r=$(ghq list -p | sed -e "s|^${HOME}/||g" | peco --query="$*")
+  r=$(ghq list -p --vcs=git | sed -e "s|^${HOME}/||g" | peco --query="$*")
   if [ -z "$r" ]; then
     return
   fi
