@@ -92,7 +92,7 @@ if [[ -d "${HOME}/.rbenv" ]]; then
   eval "$(rbenv init - zsh)"
 fi
 
-if go version >/dev/null 2>&1; then
+if builtin command -v go >/dev/null 2>&1; then
   export PATH="${HOME}/go/bin:${PATH}"
 fi
 
