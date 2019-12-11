@@ -44,3 +44,9 @@ EOS
 # Setup rubocop
 backup ~/.rubocop.yml
 ln -s ${dir}/.rubocop.yml ~/.rubocop.yml
+
+# Setup GOPATH
+mkdir -p ~/go/{src,bin,pkg}
+
+# Setup ghq
+mkdir -p ~/.ghq
