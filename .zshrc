@@ -111,9 +111,14 @@ if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
   fi
 fi
 
-# openapi-generator
+# ghq
 if builtin command -v ghq >/dev/null 2>&1; then
-  alias openapi-generator-cli="java -jar '$(ghq root)/github.com/OpenAPITools/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar'"
+  GHQ_ROOT_DIR=$(ghq root)
+fi
+
+# openapi-generator
+if [ -n "${GHQ_ROOT_DIR}" ]; then
+  alias openapi-generator-cli="java -jar '${GHQ_ROOT_DIR}/github.com/OpenAPITools/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar'"
 fi
 
 # ghq & peco
@@ -151,8 +156,8 @@ function coderepo() {
   code ${r}
 }
 
-if builtin command -v ghq >/dev/null 2>&1; then
-  hash -d github.com="$(ghq root)/github.com"
+if [ -n "${GHQ_ROOT_DIR}" ]; then
+  hash -d github.com="${GHQ_ROOT_DIR}/github.com"
 fi
 
 # hub
