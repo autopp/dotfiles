@@ -1,3 +1,7 @@
+if [ -n "${ZPROF}" ]; then
+  zmodload zsh/zprof && zprof
+fi
+
 source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
@@ -173,3 +177,7 @@ zplug load
 
 # パスの重複を削除する
 typeset -U path cdpath fpath manpath
+
+if builtin command -v zprof >/dev/null; then
+  zprof
+fi
