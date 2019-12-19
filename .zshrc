@@ -2,7 +2,6 @@ source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 zplug "zsh-users/zsh-completions"
-
 export PATH="${HOME}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:"${PATH}
 
 # 日本語ファイル名を表示可能にする
@@ -174,5 +173,3 @@ zplug load
 
 # パスの重複を削除する
 typeset -U path cdpath fpath manpath
-
-compinit -u
