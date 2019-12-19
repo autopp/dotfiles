@@ -89,7 +89,7 @@ alias rm='rm -i'
 # rbenv
 if [[ -d "${HOME}/.rbenv" ]]; then
   export PATH="${HOME}/.rbenv/bin:${PATH}"
-  eval "$(rbenv init - zsh)"
+  eval "$(rbenv init --no-rehash - zsh)"
 fi
 
 if builtin command -v go >/dev/null 2>&1; then
