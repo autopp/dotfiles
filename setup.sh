@@ -41,6 +41,13 @@ cat > ~/.gitconfig <<EOS
   path = ${dir}/.gitconfig
 EOS
 
+# setup rbenv
+if [[ ! -e ~/.rbenv ]]; then
+  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+  mkdir -p ~/.rbenv/plugins
+  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+fi
+
 # Setup rubocop
 backup ~/.rubocop.yml
 ln -s ${dir}/.rubocop.yml ~/.rubocop.yml
