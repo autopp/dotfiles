@@ -2,10 +2,13 @@ if [ -n "${ZPROF}" ]; then
   zmodload zsh/zprof && zprof
 fi
 
-source ~/.zplug/init.zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+source ~/.zplugin/bin/zplugin.zsh
 
-zplug "zsh-users/zsh-completions"
+autoload -Uz compinit
+compinit
+
+zplugin load zsh-users/zsh-completions
+
 export PATH="${HOME}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:"${PATH}
 
 # 日本語ファイル名を表示可能にする
@@ -105,14 +108,12 @@ if [[ -d "${HOME}/.nodebrew" ]]; then
 fi
 
 # theme
-zplug "~/dotfiles", use:"kphoen-autopp.zsh-theme", from:local, as:theme, defer:3
-
-if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
-  touch ~/.zplug/last_zshrc_check_time
-  if ! zplug check --verbose; then
-    zplug install
-  fi
-fi
+zplugin snippet OMZ::lib/git.zsh
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
+zplugin cdclear -q
+setopt promptsubst
+autoload -Uz colors && colors
+zplugin snippet ${HOME}/dotfiles/kphoen-autopp.zsh-theme
 
 # ghq
 if builtin command -v ghq >/dev/null 2>&1; then
@@ -172,8 +173,6 @@ fi
 if [ -f ~/.local.zsh ]; then
   source ~/.local.zsh
 fi
-
-zplug load
 
 # パスの重複を削除する
 typeset -U path cdpath fpath manpath
