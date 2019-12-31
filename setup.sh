@@ -14,9 +14,10 @@ dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 # backup .zshrc
 backup ~/.zshrc
 
-# Install zplug
-if [[ ! -d ~/.zplug ]]; then
-  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# Install zplugin
+if [[ ! -d ~/.zplugin ]]; then
+  mkdir ~/.zplugin
+  git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin
 fi
 
 ln -s ${dir}/.zshrc ~/.zshrc
