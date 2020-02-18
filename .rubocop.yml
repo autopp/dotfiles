@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
 
 Layout/CaseIndentation:
   EnforcedStyle: end
@@ -7,10 +7,16 @@ Layout/CaseIndentation:
 Layout/EndAlignment:
   EnforcedStyleAlignWith: start_of_line
 
+Layout/LineLength:
+  Max: 120
+
 Style/AsciiComments:
   Enabled: false
 
 Style/BracesAroundHashParameters:
+  Enabled: false
+
+Style/Documentation:
   Enabled: false
 
 Style/EmptyMethod:
@@ -28,9 +34,6 @@ Style/NegatedWhile:
 Style/NumericPredicate:
   Enabled: false
 
-Metrics/LineLength:
-  Max: 120
-
 Metrics/MethodLength:
   Max: 15
 
@@ -47,6 +50,9 @@ Metrics/CyclomaticComplexity:
   Max: 7
 
 Naming/HeredocDelimiterNaming:
+  Enabled: false
+
+Naming/MethodParameterName:
   Enabled: false
 
 Bundler/OrderedGems:
