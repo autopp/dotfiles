@@ -86,7 +86,6 @@ fi
 
 alias brspec='bundle exec rspec'
 alias brubocop='bundle exec rubocop'
-alias brake='bundle exec rake'
 alias brails='bundle exec rails'
 alias bexec='bundle exec'
 
@@ -133,15 +132,6 @@ function repo() {
     return
   fi
   echo ${HOME}/$r
-}
-
-function editrepo() {
-  local r
-  r=$(repo $*)
-  if [ -z "$r" ]; then
-    return
-  fi
-  cd ${r} && code ${r}
 }
 
 function gotorepo() {
