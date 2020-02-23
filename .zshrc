@@ -106,6 +106,11 @@ if [[ -d "${HOME}/.nodebrew" ]]; then
   export PATH="${HOME}/.nodebrew/current/bin:$PATH"
 fi
 
+# rust
+if [[ -d "$HOME/.cargo" ]]; then
+  source $HOME/.cargo/env
+fi
+
 # theme
 zplugin snippet OMZ::lib/git.zsh
 zplugin snippet OMZ::plugins/git/git.plugin.zsh
