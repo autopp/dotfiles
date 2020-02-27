@@ -1,4 +1,4 @@
-if [ -n "${ZPROF}" ]; then
+if [[ -n "${ZPROF}" ]]; then
   zmodload zsh/zprof && zprof
 fi
 
@@ -125,7 +125,7 @@ if builtin command -v ghq >/dev/null 2>&1; then
 fi
 
 # openapi-generator
-if [ -n "${GHQ_ROOT_DIR}" ]; then
+if [[ -n "${GHQ_ROOT_DIR}" ]]; then
   alias openapi-generator-cli="java -jar '${GHQ_ROOT_DIR}/github.com/OpenAPITools/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar'"
 fi
 
@@ -133,7 +133,7 @@ fi
 function repo() {
   local r
   r=$(ghq list -p --vcs=git | sed -e "s|^${HOME}/||g" | peco --query="$*")
-  if [ -z "$r" ]; then
+  if [[ -z "$r" ]]; then
     return
   fi
   echo ${HOME}/$r
@@ -141,7 +141,7 @@ function repo() {
 
 function gotorepo() {
   local r=$(repo $*)
-  if [ -z "$r" ]; then
+  if [[ -z "$r" ]]; then
     return
   fi
   cd ${r}
@@ -149,13 +149,13 @@ function gotorepo() {
 
 function coderepo() {
   local r=$(repo $*)
-  if [ -z "$r" ]; then
+  if [[ -z "$r" ]]; then
     return
   fi
   code ${r}
 }
 
-if [ -n "${GHQ_ROOT_DIR}" ]; then
+if [[ -n "${GHQ_ROOT_DIR}" ]]; then
   hash -d github.com="${GHQ_ROOT_DIR}/github.com"
 fi
 
@@ -165,7 +165,7 @@ if builtin command -v hub >/dev/null 2>&1; then
 fi
 
 # local settings
-if [ -f ~/.local.zsh ]; then
+if [[ -f ~/.local.zsh ]]; then
   source ~/.local.zsh
 fi
 
