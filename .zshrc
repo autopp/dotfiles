@@ -77,7 +77,7 @@ bindkey '^]' insert-last-word
 alias bd=popd
 alias mless='less +F'
 if builtin command -v exa >/dev/null 2>&1; then
-  alias ls='exa -al'
+  alias ls='exa -alb'
 elif [[ $(uname) = 'Darwin' ]]; then
   alias ls='ls -oalh -G -F'
 else
