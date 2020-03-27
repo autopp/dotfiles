@@ -106,6 +106,11 @@ if [[ -d "${HOME}/.nodebrew" ]]; then
   export PATH="${HOME}/.nodebrew/current/bin:$PATH"
 fi
 
+# go
+if builtin command -v go >/dev/null 2>&1; then
+  export GOPATH=${HOME}/go
+fi
+
 # rust
 if [[ -d "$HOME/.cargo" ]]; then
   source $HOME/.cargo/env
