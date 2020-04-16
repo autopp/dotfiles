@@ -63,3 +63,15 @@ Naming/MethodParameterName:
 
 Bundler/OrderedGems:
   Enabled: false
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
