@@ -169,6 +169,15 @@ if builtin command -v hub >/dev/null 2>&1; then
   alias git=hub
 fi
 
+# k8s
+if builtin command -v kubectl >/dev/null 2>&1; then
+  alias k=kubectl
+fi
+
+if builtin command -v kubectx >/dev/null 2>&1; then
+  alias kx=kubectx
+fi
+
 # local settings
 if [[ -f ~/.local.zsh ]]; then
   source ~/.local.zsh
