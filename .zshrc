@@ -169,6 +169,13 @@ if builtin command -v hub >/dev/null 2>&1; then
   alias git=hub
 fi
 
+function show-pr() {
+  line=$(hub pr list $* | peco)
+  if [[ -n "$line" ]]; then
+    hub pr show "$(echo $line | awk '{ print $1; }' | tr -d '#')"
+  fi
+}
+
 # k8s
 if builtin command -v kubectl >/dev/null 2>&1; then
   alias k=kubectl
