@@ -86,8 +86,8 @@ fi
 
 alias brspec='bundle exec rspec'
 alias brubocop='bundle exec rubocop'
-alias brails='bundle exec rails'
-alias brake='bundle exec rake'
+alias rails='bundle exec rails'
+alias rake='bundle exec rake'
 alias bexec='bundle exec'
 
 alias rm='rm -i'
