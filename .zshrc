@@ -178,13 +178,8 @@ function show-pr() {
 }
 
 # k8s
-if builtin command -v kubectl >/dev/null 2>&1; then
-  alias k=kubectl
-fi
-
-if builtin command -v kubectx >/dev/null 2>&1; then
-  alias kx=kubectx
-fi
+alias k=kubectl
+alias kx=kubectx
 
 # local settings
 if [[ -f ~/.local.zsh ]]; then
