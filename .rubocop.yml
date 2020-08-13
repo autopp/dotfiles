@@ -103,6 +103,33 @@ Naming/MethodParameterName:
 Bundler/OrderedGems:
   Enabled: false
 
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: false
+
+Lint/DuplicateRescueException:
+  Enabled: true
+
+Lint/EmptyConditionalBody:
+  Enabled: true
+
+Lint/FloatComparison:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: true
+
+Lint/OutOfRangeRegexpRef:
+  Enabled: true
+
+Lint/SelfAssignment:
+  Enabled: true
+
+Lint/TopLevelReturnWithArgument:
+  Enabled: true
+
+Lint/UnreachableLoop:
+  Enabled: true
+
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
 
@@ -122,4 +149,19 @@ Lint/MixedRegexpCaptureTypes:
   Enabled: true
 
 Style/ExponentialNotation:
+  Enabled: true
+
+Style/ExplicitBlockArgument:
+  Enabled: true
+
+Style/GlobalStdStream:
+  Enabled: true
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/SingleArgumentDig:
+  Enabled: true
+
+Style/StringConcatenation:
   Enabled: true
