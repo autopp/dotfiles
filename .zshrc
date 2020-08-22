@@ -178,7 +178,13 @@ function show-pr() {
 }
 
 # k8s
-alias k=kubectl
+
+if builtin command -v kubectl >/dev/null 2>&1; then
+  alias k=kubectl
+  source <(kubectl completion zsh)
+  complete -F __start_kubectl k
+fi
+
 alias kx=kubectx
 
 # local settings
