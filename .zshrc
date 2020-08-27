@@ -187,6 +187,11 @@ fi
 
 alias kx=kubectx
 
+# AWS
+if builtin command -v aws >/dev/null 2>&1 && test -f '/usr/local/bin/aws_completer'; then
+  complete -C '/usr/local/bin/aws_completer' aws
+fi
+
 # local settings
 if [[ -f ~/.local.zsh ]]; then
   source ~/.local.zsh
