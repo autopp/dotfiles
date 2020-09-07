@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -eu
+set -o pipefail
+
+repo=$1
+
+ghq get "$1"
