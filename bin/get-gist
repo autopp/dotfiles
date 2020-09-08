@@ -3,6 +3,22 @@
 set -eu
 set -o pipefail
 
-repo=$1
+function extract() {
+  echo "$1" | sed -E 's/.+[:/]([^.]+)\.git$/\1/'
+}
 
-ghq get "$1"
+if [ $# -ne 2 ]; then
+  echo usage: $0 '<repo>' '<name>' >&2
+  exit 1
+fi
+
+repo=$1
+to=$2
+from=$(extract $repo)
+
+ghq get "$repo"
+
+# TODO: currently assume gist.github.com/xxxxxx
+dir="$(ghq root)/gist.github.com"
+mv "$dir/$from" "$dir/$to"
+echo Moved to "$dir/$to"
