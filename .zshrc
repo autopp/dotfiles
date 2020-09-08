@@ -9,7 +9,7 @@ compinit
 
 zplugin load zsh-users/zsh-completions
 
-export PATH="${HOME}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:"${PATH}
+export PATH="${HOME}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${HOME}/dotfiles/bin:"${PATH}
 
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
