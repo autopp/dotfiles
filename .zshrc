@@ -177,6 +177,11 @@ function show-pr() {
   fi
 }
 
+# gh
+if builtin command -v gh >/dev/null 2>&1; then
+  eval "$(gh completion -s zsh)"
+fi
+
 # k8s
 
 if builtin command -v kubectl >/dev/null 2>&1; then
