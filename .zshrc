@@ -165,18 +165,6 @@ if [[ -n "${GHQ_ROOT_DIR}" ]]; then
   hash -d github.com="${GHQ_ROOT_DIR}/github.com"
 fi
 
-# hub
-if builtin command -v hub >/dev/null 2>&1; then
-  alias git=hub
-fi
-
-function show-pr() {
-  line=$(hub pr list $* | peco)
-  if [[ -n "$line" ]]; then
-    hub pr show "$(echo $line | awk '{ print $1; }' | tr -d '#')"
-  fi
-}
-
 # gh
 if builtin command -v gh >/dev/null 2>&1; then
   eval "$(gh completion -s zsh)"
