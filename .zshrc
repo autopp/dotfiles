@@ -47,6 +47,9 @@ setopt append_history
 # コマンドが入力されるとすぐに追加
 setopt inc_append_history
 
+# 履歴から冗長な空白を削除
+setopt hist_reduce_blanks
+
 # Completion
 # <Tab> でパス名の補完候補を表示したあと、
 # 続けて <Tab> を押すと候補からパス名を選択できるようになる
