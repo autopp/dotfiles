@@ -57,4 +57,4 @@ ln -s ${dir}/.rubocop.yml ~/.rubocop.yml
 mkdir -p ~/go/{src,bin,pkg}
 
 # Setup ghq
-mkdir -p ~/.ghq
+mkdir -p ~/ghq
