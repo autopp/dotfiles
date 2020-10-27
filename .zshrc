@@ -87,6 +87,10 @@ else
   alias ls='ls -oalh --color -F'
 fi
 
+function ls-cmd() {
+  ls `which "$1"`
+}
+
 alias brspec='bundle exec rspec'
 alias brubocop='bundle exec rubocop'
 alias rails='bundle exec rails'
