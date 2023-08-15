@@ -155,10 +155,10 @@ if [[ -n "${GHQ_ROOT_DIR}" ]]; then
   alias openapi-generator-cli="java -jar '${GHQ_ROOT_DIR}/github.com/OpenAPITools/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar'"
 fi
 
-# ghq & peco
+# ghq & fzf
 function repo() {
   local r
-  r=$(ghq list -p --vcs=git | sed -e "s|^${HOME}/||g" | peco --query="$*")
+  r=$(ghq list -p --vcs=git | sed -e "s|^${HOME}/||g" | fzf --query="$*")
   if [[ -z "$r" ]]; then
     return
   fi
