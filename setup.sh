@@ -15,9 +15,8 @@ dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 backup ~/.zshrc
 
 # Install zplugin
-if [[ ! -d ~/.zplugin ]]; then
-  mkdir ~/.zplugin
-  git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin
+if [[ ! -d ~/.local/share/zinit/zinit.git ]]; then
+  bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 fi
 
 ln -s ${dir}/.zshrc ~/.zshrc

@@ -2,14 +2,26 @@ if [[ -n "${ZPROF}" ]]; then
   zmodload zsh/zprof && zprof
 fi
 
-source ~/.zplugin/bin/zplugin.zsh
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+source "${ZINIT_HOME}/zinit.zsh"
+
+if builtin command -v brew >/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
+fpath+=~/.zfunc
 
 autoload -Uz compinit
 compinit
 
 zplugin load zsh-users/zsh-completions
+zinit wait lucid atload"zicompinit; zicdreplay" blockf for zsh-users/zsh-completions
 
 export PATH="${HOME}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${HOME}/dotfiles/bin:"${PATH}
+
+autoload bashcompinit
+bashcompinit
 
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
@@ -95,6 +107,7 @@ alias brspec='bundle exec rspec'
 alias brubocop='bundle exec rubocop'
 alias rails='bundle exec rails'
 alias rake='bundle exec rake'
+alias steep='bundle exec steep'
 alias bexec='bundle exec'
 
 alias rm='rm -i'
@@ -203,3 +216,13 @@ typeset -U path cdpath fpath manpath
 if builtin command -v zprof >/dev/null; then
   zprof
 fi
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk

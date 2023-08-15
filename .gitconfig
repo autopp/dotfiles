@@ -10,6 +10,7 @@
   push-fork = !git push "$(git config user.name)" "$(git rev-parse --abbrev-ref HEAD)"
   sw = switch
   res = restore
-  delete-merged-branches = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v dev | xargs -n 1 git branch -d
+  delete-merged-branches = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v main | grep -v dev | xargs -n 1 git branch -d
   sync-master = !git co master && git pull origin master && git fetch --prune && git delete-merged-branches
+  sync-main = !git co main && git pull origin main && git fetch --prune && git delete-merged-branches
   set-user = !git config --local user.name autopp && git config --local user.email autopp.inc@gmail.com
